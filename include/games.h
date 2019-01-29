@@ -5,4 +5,6 @@
 
 int playGame1();
 
+int playGame2();
+
 #endif
