@@ -48,6 +48,20 @@ void showCard(Card card)
   printf("[%s-%s]", rank, color);
 }
 
+Deck * initDeck()
+{
+  Deck * deck = calloc(sizeof(Deck), 1);
+
+  for(char i = 1; i <= 52; i++)
+  {
+    deck->cards[i] = initCard();
+    deck->cards[i].rank = i % 13;
+    deck->cards[i].color = i % 4;
+  }
+
+  return deck;
+}
+
 Card getCardFromNewDeck()
 {
   Card card = initCard();
