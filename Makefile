@@ -6,6 +6,8 @@ SRC		:= src
 INCLUDE	:= include
 LIB		:= lib
 
+$(shell mkdir -p $(BIN))
+
 LIBRARIES	:=
 
 ifeq ($(OS),Windows_NT)
