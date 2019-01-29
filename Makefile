@@ -6,7 +6,7 @@ SRC		:= src
 INCLUDE	:= include
 LIB		:= lib
 
-$(shell mkdir -p $(BIN))
+$(info $(shell mkdir $(BIN)))
 
 LIBRARIES	:=
 
