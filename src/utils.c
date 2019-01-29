@@ -1,5 +1,20 @@
 #include <utils.h>
 
+//---------------------------------------
+// Random
+//---------------------------------------
+
+char getRand(char min, char max)
+{
+  // generate random number
+  // representing card from 1 to 52
+  return (rand() % ((max+1) - min)) + min;
+}
+
+//---------------------------------------
+// Cards
+//---------------------------------------
+
 Card initCard()
 {
   Card card;
@@ -52,25 +67,36 @@ Deck * initDeck()
 {
   Deck * deck = calloc(sizeof(Deck), 1);
 
-  for(char i = 1; i <= 52; i++)
+  for(unsigned char i = 1; i <= 52; i++)
   {
-    deck->cards[i] = initCard();
-    deck->cards[i].rank = i % 13;
-    deck->cards[i].color = i % 4;
+    Card card = initCard();
+    deck->cards[i-1] = &card;
+    deck->cards[i-1]->rank = i % 13;
+    deck->cards[i-1]->color = i % 4;
   }
 
   return deck;
 }
 
+//---------------------------------------
+// Draft
+//---------------------------------------
+
 Card getCardFromNewDeck()
 {
   Card card = initCard();
 
-  // generate random number
-  // representing card from 1 to 52
-  char randNumber = (rand() % 52) + 1;
+  char randNumber = getRand(1,52);
 
   card.rank = randNumber % 13;
   card.color = randNumber % 4;
   return card;
+}
+
+Card getCardFromDeck(Deck * deck)
+{
+  char randNumber = getRand(0,51);
+  Card * card = deck->cards[randNumber];
+
+  return *card;
 }

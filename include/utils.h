@@ -2,6 +2,7 @@
 #define UTILS
 
 #include <stdio.h>
+#include <stdbool.h>
 
 //---------------------------------------
 // Random
@@ -35,7 +36,7 @@ void showCard(Card);
 
 typedef struct deck
 {
-    Card cards[52];
+    Card * cards[52];
 
 } Deck;
 
@@ -48,5 +49,7 @@ Deck * initDeck();
 // creates no Deck struct,
 // only a random card.
 Card getCardFromNewDeck();
+
+Card getCardFromDeck(Deck*);
 
 #endif
