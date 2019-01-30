@@ -13,6 +13,7 @@ int main(int argc, char *argv[]) {
 	//Test des jeux
 	for(size_t i = 0; i < 100; i++)
 	{
-		playGame1();
+		//playGame1();
+		playGame2();
 	}
 }

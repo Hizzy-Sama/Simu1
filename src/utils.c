@@ -60,3 +60,4 @@ Card getCardFromNewDeck()
   card.color = randNumber % 4;
   return card;
 }
+
