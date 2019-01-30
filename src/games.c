@@ -23,13 +23,13 @@ int playGame2()
     int win = 50, gain = -1;
     printf("[GAME 2] The player as bet, %d$... ", gain);
 
-    Card c1 = getCardFromNewDeck(), c2 = getCardFromNewDeck();
+    Card card1 = getCardFromNewDeck(), card2 = getCardFromNewDeck();
 
-    showCard(c1);
+    showCard(card1);
     printf(" & ");
-    showCard(c2);
+    showCard(card2);
 
-    if(c1.rank == c2.rank && c1.color == c2.color) { 
+    if(card1.rank == card2.rank && card1.color == card2.color) { 
         gain+=win; 
         printf(" it's a win ! +%d$\n", win);
     }
