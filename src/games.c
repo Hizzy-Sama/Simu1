@@ -3,7 +3,7 @@
 int playGame1()
 {
     int win = 10, gain = -1;
-    printf("The player as bet, %d$... ", gain);
+    printf("[GAME 1] The player as bet, %d$... ", gain);
 
     Card c = getCardFromNewDeck();
     showCard(c);
