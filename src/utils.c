@@ -95,7 +95,7 @@ Card getCardFromNewDeck()
 
 Card getCardFromDeck(Deck * deck)
 {
-  char randNumber = getRand(0,51);
+  unsigned char randNumber = getRand(0,51);
   Card * card = deck->cards[randNumber];
 
   return *card;
