@@ -11,31 +11,36 @@ int main(int argc, char *argv[]) {
 	srand(time(NULL));
 
 	//Test des jeux
-
-/*
-	for(size_t i = 0; i < 100; i++)
-	{
-		playGame1();
+	if(0){
+		for(size_t i = 0; i < 100; i++)
+		{
+			playGame1();
+		}
 	}
-	for(size_t i = 0; i < 1000; i++)
-	{
-		playGame2();
+	if(0){
+		for(size_t i = 0; i < 1000; i++)
+		{
+			playGame2();
+		}
 	}
-	for(size_t i = 0; i < 100; i++)
-	{
-		playGame3();
+	if(0){
+		for(size_t i = 0; i < 100; i++)
+		{
+			playGame3();
+		}
 	}
-*/
-	Deck * deck = initDeck();
-	showDeck(deck);
+	if(1){
+		for(size_t i = 0; i < 100; i++)
+		{
+			playGame4();
+		}
+	}
+	if(0){
+		for(size_t i = 0; i < 100; i++)
+		{
+			playGame5();
+		}
+	}
 
-	Card card = getCardFromDeck(deck);
-	showCard(card);
-	printf("\n");
-	
-	showDeck(deck);
-
-	storeCardInDeck(deck, card);
-
-	showDeck(deck);
+	return 0;
 }

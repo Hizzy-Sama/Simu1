@@ -9,4 +9,8 @@ int playGame2();
 
 int playGame3();
 
+int playGame4();
+
+int playGame5();
+
 #endif
