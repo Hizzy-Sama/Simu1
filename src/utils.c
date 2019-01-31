@@ -122,3 +122,14 @@ Card getCardFromDeck(Deck * deck)
   
   return card;
 }
+
+int storeCardInDeck(Deck * deck, Card card)
+{
+  // if we want to keep 52 as a maximum
+  if(deck->size >= 52) { return -1; }
+
+  deck->cards[deck->size] = card;
+  deck->size++;
+
+  return 0;
+}

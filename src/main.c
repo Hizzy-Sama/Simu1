@@ -28,9 +28,14 @@ int main(int argc, char *argv[]) {
 */
 	Deck * deck = initDeck();
 	showDeck(deck);
+
 	Card card = getCardFromDeck(deck);
 	showCard(card);
 	printf("\n");
+	
 	showDeck(deck);
 
+	storeCardInDeck(deck, card);
+
+	showDeck(deck);
 }

@@ -54,6 +54,6 @@ void showDeck(Deck *);
 Card getCardFromNewDeck();
 
 Card getCardFromDeck(Deck*);
-Card storeCardInDeck(Deck*);
+int storeCardInDeck(Deck*, Card);
 
 #endif
