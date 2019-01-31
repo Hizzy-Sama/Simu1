@@ -44,7 +44,25 @@ int playGame2()
 
 int playGame3()
 {
-    //nothing yet
+    int win = 2, gain = -1;
+    printf("[GAME 3] The player as bet, %d$... ", gain);
 
-    return 0;
+    Deck * deck = initDeck();
+
+    Card card1 = getCardFromDeck(deck);
+    Card card2 = getCardFromDeck(deck);
+
+    showCard(card1);
+    printf(" & ");
+    showCard(card2);
+
+    if(card1.rank < card2.rank) { 
+        gain+=win; 
+        printf(" it's a win ! +%d$\n", win);
+    }
+    else {
+        printf(" maybe next time !\n");
+    }
+
+    return gain;
 }

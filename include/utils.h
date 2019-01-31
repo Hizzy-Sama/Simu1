@@ -36,13 +36,14 @@ void showCard(Card);
 
 typedef struct deck
 {
-    Card * cards[52];
+    Card cards[52];
 
     unsigned char size;
 
 } Deck;
 
 Deck * initDeck();
+void showDeck(Deck *);
 
 //---------------------------------------
 // Draft
@@ -53,5 +54,6 @@ Deck * initDeck();
 Card getCardFromNewDeck();
 
 Card getCardFromDeck(Deck*);
+Card storeCardInDeck(Deck*);
 
 #endif

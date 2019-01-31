@@ -11,6 +11,8 @@ int main(int argc, char *argv[]) {
 	srand(time(NULL));
 
 	//Test des jeux
+
+/*
 	for(size_t i = 0; i < 100; i++)
 	{
 		playGame1();
@@ -23,4 +25,12 @@ int main(int argc, char *argv[]) {
 	{
 		playGame3();
 	}
+*/
+	Deck * deck = initDeck();
+	showDeck(deck);
+	Card card = getCardFromDeck(deck);
+	showCard(card);
+	printf("\n");
+	showDeck(deck);
+
 }

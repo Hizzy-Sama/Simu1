@@ -6,8 +6,6 @@ SRC		:= src
 INCLUDE	:= include
 LIB		:= lib
 
-$(info $(shell mkdir $(BIN)))
-
 LIBRARIES	:=
 
 ifeq ($(OS),Windows_NT)
@@ -25,4 +23,5 @@ run: all
 	./$(BIN)/$(EXECUTABLE)
 
 $(BIN)/$(EXECUTABLE): $(SRC)/*
+	$(info $(shell mkdir $(BIN)))
 	$(CC) $(C_FLAGS) -I$(INCLUDE) -L$(LIB) $^ -o $@ $(LIBRARIES)
