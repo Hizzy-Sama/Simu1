@@ -95,5 +95,33 @@ int playGame4()
 
 int playGame5()
 {
-    return 0;
+    int win = 5, gain = -1;
+    if(LOG) printf("[GAME 5] The player as bet, %d$... ", gain);
+
+    Deck * deck = initDeck();
+    Card cards[5];
+
+    for(unsigned char i = 0; i < 5; i++)
+    {
+        cards[i] = getCardFromDeck(deck);
+        if(LOG) showCard(cards[i]);
+        if(LOG) printf(" ");
+    }
+    
+    /*
+    S'il existe un sous-ensemble de ces
+    cartes qui fait une série de trois
+    valeurs de cartes consécutives ou plus
+    (par exemple, 5-6-7 ou 10-J-Q),
+    alors le joueur gagne : { gain += win; }
+    */
+
+    if(0/* TODO */) { 
+        if(LOG) printf(" it's a win ! +%d$\n", gain + 1);
+    }
+    else {
+        if(LOG) printf(" maybe next time !\n");
+    }
+
+    return gain;
 }
