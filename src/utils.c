@@ -71,9 +71,9 @@ Deck * initDeck()
   for(unsigned char i = 1; i <= 52; i++)
   {
     Card card = initCard();
+    card.rank = i % 13;
+    card.color = i % 4;
     deck->cards[i-1] = &card;
-    deck->cards[i-1]->rank = i % 13;
-    deck->cards[i-1]->color = i % 4;
     deck->size++;
   }
 
