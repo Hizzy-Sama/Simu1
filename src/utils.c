@@ -66,6 +66,7 @@ void showCard(Card card)
 Deck * initDeck()
 {
   Deck * deck = calloc(sizeof(Deck), 1);
+  deck->size = 0;
 
   for(unsigned char i = 1; i <= 52; i++)
   {
@@ -73,6 +74,7 @@ Deck * initDeck()
     deck->cards[i-1] = &card;
     deck->cards[i-1]->rank = i % 13;
     deck->cards[i-1]->color = i % 4;
+    deck->size++;
   }
 
   return deck;

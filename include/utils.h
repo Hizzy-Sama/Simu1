@@ -38,6 +38,8 @@ typedef struct deck
 {
     Card * cards[52];
 
+    unsigned char size;
+
 } Deck;
 
 Deck * initDeck();
