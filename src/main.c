@@ -10,37 +10,64 @@ int main(int argc, char *argv[]) {
 	//init random generator
 	srand(time(NULL));
 
+	//Nombre d'iteration
+	size_t iterations = 10000;
+	double playerMoney = 0;
+
 	//Test des jeux
-	if(0){
-		for(size_t i = 0; i < 100; i++)
-		{
-			playGame1();
-		}
-	}
-	if(0){
-		for(size_t i = 0; i < 1000; i++)
-		{
-			playGame2();
-		}
-	}
-	if(0){
-		for(size_t i = 0; i < 100; i++)
-		{
-			playGame3();
-		}
-	}
 	if(1){
-		for(size_t i = 0; i < 100; i++)
+		for(size_t i = 0; i < iterations; i++)
 		{
-			playGame4();
+			
+			playerMoney += playGame1();
 		}
+		double proba = playerMoney/iterations * 100;
+		printf(" Probalite de gagne:  %f \n", proba);
+	}
+/*	if(0){
+		for(size_t i = 0; i < iterations; i++)
+		{
+			
+			if(playGame2()>0){
+				combigagnantes += 1;
+			};
+		}
+		double proba = combigagnantes/iterations * 100;
+		printf(" Probalite de gagne:  %f \n", proba);
 	}
 	if(0){
-		for(size_t i = 0; i < 100; i++)
+		for(size_t i = 0; i < iterations; i++)
 		{
-			playGame5();
+			
+			if(playGame3()>0){
+				combigagnantes += 1;
+			};
 		}
+		double proba = combigagnantes/iterations *100;
+		printf(" Probalite de gagne:  %f \n", proba);
 	}
+	if(0){
+		for(size_t i = 0; i < iterations; i++)
+		{
+			
+			if(playGame4()>0){
+				combigagnantes += 1;
+			};
+		}
+		double proba = combigagnantes/iterations * 100;
+		printf(" Probalite de gagne:  %f \n", proba);
+	}
+	if(0){
+		for(size_t i = 0; i < iterations; i++)
+		{
+			
+			if(playGame5()>0){
+				combigagnantes += 1;
+			};
+		}
+		double proba = combigagnantes/iterations * 100;
+		printf(" Probalite de gagne:  %f \n", proba);
+	}*/
 
 	return 0;
 }
