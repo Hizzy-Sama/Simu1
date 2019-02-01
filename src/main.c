@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
 
 	//Test des jeux
 	if(1){
-		double playerMoney = 100;
+		double playerMoney = 0;
 		double win = 0;
 		for(size_t i = 0; i < iterations; i++)
 		{
@@ -25,11 +25,10 @@ int main(int argc, char *argv[]) {
 			if(gain >0){win++;}
 		}
 		double proba = win/iterations * 100;
-		printf("[GAME1] Gains finaux:  %f \n", playerMoney);
-		printf("[GAME1] Proba:  %f \n", proba);
+		printf("[GAME1] Frequence:  %f %%\n", proba);
 	}
 	if(1){
-		double playerMoney = 100;
+		double playerMoney = 0;
 		double win = 0;
 		for(size_t i = 0; i < iterations; i++)
 		{
@@ -38,11 +37,10 @@ int main(int argc, char *argv[]) {
 			if(gain >0){win++;}
 		}
 		double proba = win/iterations * 100;
-		printf("[GAME2] Gains finaux:  %f \n", playerMoney);
-		printf("[GAME2] Proba:  %f \n", proba);
+		printf("[GAME2] Frequence:  %f %%\n", proba);
 	}
 	if(1){
-		double playerMoney = 100;
+		double playerMoney = 0;
 		double win = 0;
 		for(size_t i = 0; i < iterations; i++)
 		{
@@ -51,11 +49,10 @@ int main(int argc, char *argv[]) {
 			if(gain >0){win++;}
 		}
 		double proba = win/iterations * 100;
-		printf("[GAME3] Gains finaux:  %f \n", playerMoney);
-		printf("[GAME3] Proba:  %f \n", proba);
+		printf("[GAME3] Frequence:  %f %%\n", proba);
 	}
 	if(1){
-		double playerMoney = 100;
+		double playerMoney = 0;
 		double win = 0;
 		for(size_t i = 0; i < iterations; i++)
 		{
@@ -64,11 +61,10 @@ int main(int argc, char *argv[]) {
 			if(gain >0){win++;}
 		}
 		double proba = win/iterations * 100;
-		printf("[GAME4] Gains finaux:  %f \n", playerMoney);
-		printf("[GAME4] Proba:  %f \n", proba);
+		printf("[GAME4] Frequence:  %f %%\n", proba);
 	}
 	if(1){
-		double playerMoney = 100;
+		double playerMoney = 0;
 		double win = 0;
 		for(size_t i = 0; i < iterations; i++)
 		{
@@ -77,8 +73,7 @@ int main(int argc, char *argv[]) {
 			if(gain >0){win++;}
 		}
 		double proba = win/iterations * 100;
-		printf("[GAME5] Gains finaux:  %f \n", playerMoney);
-		printf("[GAME5] Proba:  %f \n", proba);
+		printf("[GAME5] Frequence:  %f %%\n", proba);
 	}
 
 	return 0;
