@@ -9,9 +9,9 @@ LIB		:= lib
 LIBRARIES	:=
 
 ifeq ($(OS),Windows_NT)
-EXECUTABLE	:= main.exe
+EXECUTABLE	:= LaunchSimulation.exe
 else
-EXECUTABLE	:= main
+EXECUTABLE	:= LaunchSimulation
 endif
 
 all: $(BIN)/$(EXECUTABLE)

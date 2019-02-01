@@ -3,6 +3,8 @@
 
 #include <utils.h>
 
+unsigned char ShowDetails;
+
 int playGame1();
 
 int playGame2();
