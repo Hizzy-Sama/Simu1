@@ -9,7 +9,7 @@ int playGame1()
 
     Card c = getCardFromNewDeck();
     showCard(c);
-    if(c.rank == 1) { 
+    if(c.rank == 0 /* ACE */) { 
         gain+=win; 
         printf(" it's a win ! +%d$\n", gain + 1);
     }
@@ -101,26 +101,73 @@ int playGame5()
     Deck * deck = initDeck();
     Card cards[5];
 
+    // A 2 3 4 5 6 7 8 9 J Q K A 2 3 4 5 6 7 8 9 J Q K
+    unsigned long int mask = 0;
+
     for(unsigned char i = 0; i < 5; i++)
     {
         cards[i] = getCardFromDeck(deck);
+        mask |= 1 << (cards[i].rank);
+        mask |= 1 << (cards[i].rank + 13);
         if(LOG) showCard(cards[i]);
         if(LOG) printf(" ");
     }
-    
-    /*
-    S'il existe un sous-ensemble de ces
-    cartes qui fait une série de trois
-    valeurs de cartes consécutives ou plus
-    (par exemple, 5-6-7 ou 10-J-Q),
-    alors le joueur gagne : { gain += win; }
-    */
 
-    if(0/* TODO */) { 
-        if(LOG) printf(" it's a win ! +%d$\n", gain + 1);
+    if(LOG) printf("\nLooking for an ordered sequence... ");
+    
+    unsigned char count = 0;
+    unsigned char lastRank = 0;
+    unsigned char sequenceLength = 1;
+
+    for(size_t i = 0; i < 26; i++)
+    {
+        if(mask & (1 << i)) 
+        {
+            count++;
+            if(count > sequenceLength)
+            {
+                sequenceLength = count;
+                lastRank = i;
+            }
+        }
+        else
+        {
+            count = 0;
+        }
+    }
+
+    if(sequenceLength >= 3) {
+        gain += win;
+        if(LOG)
+        {
+            printf("{ ");
+            char rank[3];
+            for(int i = sequenceLength - 1; i >= 0 ; i--)
+            {
+                switch((lastRank-i) % 13){
+                case 10:
+                    sprintf(rank, "%s", "J");
+                    break;
+                case 11:
+                    sprintf(rank, "%s", "Q");
+                    break;
+                case 12:
+                    sprintf(rank, "%s", "K");
+                    break;
+                case 0:
+                    sprintf(rank, "%s", "A");
+                    break;
+                default:
+                    sprintf(rank,"%d", (lastRank + 1 - i) % 13);
+                    break;
+                }
+                printf("%s ", rank);
+            }
+            printf("} it's a win ! +%d$\n", gain + 1);
+        }
     }
     else {
-        if(LOG) printf(" maybe next time !\n");
+        if(LOG) printf("Nothing found, maybe next time !\n");
     }
 
     return gain;

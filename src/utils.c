@@ -7,7 +7,8 @@
 char getRand(char min, char max)
 {
   // generate random number
-  // representing card from 1 to 52
+  // representing card from
+  // min to max both included
   return (rand() % ((max+1) - min)) + min;
 }
 
@@ -28,20 +29,20 @@ void showCard(Card card)
   char rank[10], color[10];
 
   switch(card.rank){
-    case 11:
+    case 10:
       sprintf(rank, "%s", "J");
       break;
-    case 12:
+    case 11:
       sprintf(rank, "%s", "Q");
       break;
-    case 0:
+    case 12:
       sprintf(rank, "%s", "K");
       break;
-    case 1:
+    case 0:
       sprintf(rank, "%s", "A");
       break;
     default:
-      sprintf(rank,"%d", card.rank);
+      sprintf(rank,"%d", card.rank+1);
       break;
   }
 
@@ -72,12 +73,12 @@ Deck * initDeck()
   deck->size = 0;
 
 
-  for(unsigned char i = 1; i <= 52; i++)
+  for(unsigned char i = 0; i < 52; i++)
   {
     Card card = initCard();
     card.rank = i % 13;
-    card.color = (i-1) / 13;
-    deck->cards[i-1] = card;
+    card.color = i / 13;
+    deck->cards[i] = card;
     deck->size++;
   }
 
@@ -103,7 +104,7 @@ Card getCardFromNewDeck()
 {
   Card card = initCard();
 
-  char randNumber = getRand(1,52);
+  char randNumber = getRand(0,51);
 
   card.rank = randNumber % 13;
   card.color = randNumber % 4;
@@ -112,7 +113,7 @@ Card getCardFromNewDeck()
 
 Card getCardFromDeck(Deck * deck)
 {
-  unsigned char randNumber = getRand(0,51);
+  unsigned char randNumber = getRand(0,deck->size - 1);
   Card card = deck->cards[randNumber];
   deck->size--;
   for(unsigned char i = randNumber; i < deck->size; i++)

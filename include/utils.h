@@ -18,16 +18,18 @@
 typedef struct card
 {
     char rank;
-    // 1-10 :   Numbers
-    // 11 :     Jack
-    // 12 :     Queen
-    // 13 :     King
+    // assuming that A < 2 (not K < A)
+    // 0   : Ace
+    // 1-9 : Numbers (2-10)
+    // 10  : Jack
+    // 11  : Queen
+    // 12  : King
     
     char color;
-    // 0: Clubs
-    // 1: Diamonds
-    // 2: Hearts
-    // 3: Spades
+    // 0   : Clubs
+    // 1   : Diamonds
+    // 2   : Hearts
+    // 3   : Spades
 
 } Card;
 
