@@ -1,6 +1,6 @@
 #include <games.h>
 
-#define LOG 1
+#define LOG 0
 
 int playGame1()
 {

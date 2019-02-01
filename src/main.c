@@ -22,52 +22,44 @@ int main(int argc, char *argv[]) {
 			playerMoney += playGame1();
 		}
 		double proba = playerMoney/iterations * 100;
-		printf(" Probalite de gagne:  %f \n", proba);
+		printf(" Gain finaux:  %f \n", proba);
 	}
-/*	if(0){
+	if(1){
 		for(size_t i = 0; i < iterations; i++)
 		{
 			
-			if(playGame2()>0){
-				combigagnantes += 1;
-			};
+			playerMoney += playGame2();
 		}
-		double proba = combigagnantes/iterations * 100;
-		printf(" Probalite de gagne:  %f \n", proba);
+		double proba = playerMoney/iterations * 100;
+		printf(" Gain finaux:  %f \n", proba);
 	}
-	if(0){
+	if(1){
 		for(size_t i = 0; i < iterations; i++)
 		{
 			
-			if(playGame3()>0){
-				combigagnantes += 1;
-			};
+			playerMoney += playGame3();
 		}
-		double proba = combigagnantes/iterations *100;
-		printf(" Probalite de gagne:  %f \n", proba);
+		double proba = playerMoney/iterations * 100;
+		printf(" Gain finaux:  %f \n", proba);
 	}
-	if(0){
+	if(1){
 		for(size_t i = 0; i < iterations; i++)
 		{
 			
-			if(playGame4()>0){
-				combigagnantes += 1;
-			};
+			playerMoney += playGame4();
 		}
-		double proba = combigagnantes/iterations * 100;
-		printf(" Probalite de gagne:  %f \n", proba);
+		double proba = playerMoney/iterations * 100;
+		printf(" Gain finaux:  %f \n", proba);
 	}
-	if(0){
+	if(1){
 		for(size_t i = 0; i < iterations; i++)
 		{
 			
-			if(playGame5()>0){
-				combigagnantes += 1;
-			};
+			playerMoney += playGame2();
 		}
-		double proba = combigagnantes/iterations * 100;
-		printf(" Probalite de gagne:  %f \n", proba);
-	}*/
+		double proba = playerMoney/iterations * 100;
+		printf(" Gain finaux:  %f \n", proba);
+	}
 
 	return 0;
 }
